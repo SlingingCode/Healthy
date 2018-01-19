@@ -9,7 +9,9 @@ In the examples the application is named *Healthy*
 ### Generate new .NET Core Web API project
     dotnet new webapi -n Healthy.API
 
-***
+### Add .gitignore
+You can generate a .gitignore file at https://www.gitignore.io/     
+Just add `VisualStudioCode`, `Angular` and `ASPNETCore` and hit the create button, and you will have a nice .gitignore generated for you.
 
 ## GIT Commands and Workflow - for new project
 

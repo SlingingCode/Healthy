@@ -12,7 +12,11 @@ Also add EF Core Tools by adding this
 `<DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />`  
 and this      
 `<DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />`   
-as shown below. (Ask google for latest versions. As the time of writing, the latest version was 2.0.1)
+as shown below. Check latest versions at Nuget.
+
+https://www.nuget.org/packages/Microsoft.VisualStudio.Web.CodeGeneration.Tools/
+https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/
+https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet/
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
