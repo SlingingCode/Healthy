@@ -9,7 +9,6 @@ Web:
 API:
   ☐ Login - Social Auth @next @skeleton
   ☐ Login JWT
-  ☐ Endpoint - GET Measure values @next @skeleton
   ☐ Swagger eller annat för API, lyssna på podcast om Microservices, vad de alternativa dokumentationsgenererarna hette (inte .net rocks)
 
 Database:
@@ -17,5 +16,9 @@ Database:
   ☐ Create SQL db in Azur
 
 Archive:
+  ✔ First Endpoint - GET @next @skeleton @done(2018-01-21 14:54)
+  ✔ Resource models (to return to client) @done(2018-01-21 14:55)
+  ✔ First Migrations @done(2018-01-21 14:55)
+  ✔ Local DB (in docker container) @done(2018-01-21 14:55)
   ✔ Seed Db @done(2018-01-21 09:38)
   ✔ Constraints for models: Persons and ScaleResults @done(2018-01-21 09:38)e
