@@ -33,3 +33,26 @@ https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet/
 Ask dotnet CLI built in help. For example if you want help about migrations type `dotnet ef migrations --help`
 
 ## Create DB Context
+Create a dbContext class like this
+    public class HealthyDbContext : DbContext
+    {
+        // EF 6, so brownfield...
+        // public HealthyDbContext(string connectionString): base(connectionString) { }
+
+        // .NET Core
+        public HealthyDbContext(DbContextOptions<HealthyDbContext> options): base(options) { }
+        
+        // Add DbSet(s) for the model(s)
+        public DbSet<Person> Persons { get; set; }
+    }
+
+## Create Connection string
+Add the following to appsettings.json
+    "ConnectionStrings": {
+        "Default" :  "server=localhost; database=healthy; user id=sa; password=Healthy2018!"
+    },
+
+## Migrations
+Add a first migration `dotnet ef migrations add InitialModel`, remember to have SQLServer running in a docker container. If you don't have it up and running yet, fire up a new terminal instance and start it with `docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=P@ssw0rd' -p 1433:1433 -d microsoft/mssql-server-linux`. If you ever need to remove a migration, `dotnet ef migrations remove` removes the last migration (not yet applied to database).
+To push the changes to the database, `dotnet ef database update`. You can also rollback the database to a specific migration, `dotnet ef database update MigrationName` or 0 instead of MigrationName to rollback to inital state.
+

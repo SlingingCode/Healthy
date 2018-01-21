@@ -1,3 +1,4 @@
+using Healthy.API.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Healthy.API.Persistence
@@ -10,6 +11,8 @@ namespace Healthy.API.Persistence
         public HealthyDbContext(DbContextOptions<HealthyDbContext> options): base(options) {
             
         }
+        
+        public DbSet<Person> Persons { get; set; }
         
     }
 }

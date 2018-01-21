@@ -1,0 +1,17 @@
+
+Web:
+  ☐ Login - Social Auth `FaceBook` @next @skeleton
+  ☐ Login JWT
+  ☐ List measure values with Material @next @skeleton
+  ☐ Page with form to fill in new values, Angular Reactive Forms @video(PS, Mosh Hamedani) @skeleton 
+  ☐ Make some awesome styling using Material @video(PS) @low
+  
+API:
+  ☐ Login - Social Auth @next @skeleton
+  ☐ Login JWT
+  ☐ Endpoint - GET Measure values @next @skeleton
+  ☐ Swagger eller annat för API, lyssna på podcast om Microservices, vad de alternativa dokumentationsgenererarna hette (inte .net rocks)
+
+Database:
+  ☐ Azure Sql Tools i VSCode, kolla vad det är för plugins som verkar bäst
+  ☐ Create SQL db in Azure
