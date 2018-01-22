@@ -7626,7 +7626,7 @@
       ]
     },
     "Remotion.Linq/2.1.1": {
-      "sha512": "mDB8IhjVTJTrx/UvWV6QxWyKyk7vO3Imq6+uGsX5wgPfRguNyKV4+OxHHV817MPJkNwnbPNJKUYG909cbrPwAg==",
+      "sha512": "IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
       "type": "package",
       "path": "remotion.linq/2.1.1",
       "files": [
@@ -12604,28 +12604,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/markussjoholm/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\Markus\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/markussjoholm/SourceCode/GIT/Healthy/Healthy.API/Healthy.API.csproj",
+      "projectUniqueName": "d:\\SourceCode\\SlingingCode\\GIT\\Healthy\\Healthy.API\\Healthy.API.csproj",
       "projectName": "Healthy.API",
-      "projectPath": "/Users/markussjoholm/SourceCode/GIT/Healthy/Healthy.API/Healthy.API.csproj",
-      "packagesPath": "/Users/markussjoholm/.nuget/packages/",
-      "outputPath": "/Users/markussjoholm/SourceCode/GIT/Healthy/Healthy.API/obj/",
+      "projectPath": "d:\\SourceCode\\SlingingCode\\GIT\\Healthy\\Healthy.API\\Healthy.API.csproj",
+      "packagesPath": "C:\\Users\\Markus\\.nuget\\packages\\",
+      "outputPath": "d:\\SourceCode\\SlingingCode\\GIT\\Healthy\\Healthy.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/markussjoholm/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Markus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -12660,9 +12662,9 @@
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0",
             "autoReferenced": true
-          }
+          }          
         },
         "imports": [
           "net461"
