@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using Healthy.API.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -23,6 +26,10 @@ namespace Healthy.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper();
+            // services.AddDbContext<HealthyDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Default"]));
+            services.AddDbContext<HealthyDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            // ConnectionStrings
             services.AddMvc();
         }
 
