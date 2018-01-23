@@ -1,3 +1,11 @@
+# Manually Added
+# ignore appsettings configuration files
+**/appsettings.development.json
+**/appsettings.staging.json
+**/appsettings.production.json
+
+#############################################################################
+
 # Created by https://www.gitignore.io/api/angular,aspnetcore,visualstudiocode
 
 ### Angular ###
