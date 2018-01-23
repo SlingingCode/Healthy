@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-scale-results',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScaleResultsComponent implements OnInit {
 
-  constructor() { }
+  persons: any;
+  constructor(private dataService: DataService) {
+
+  }
 
   ngOnInit() {
+    this.dataService.getPersons();
+
+    // TODO: Async
+    setTimeout(() => {
+      this.persons = this.dataService.personData;
+      console.log('this.persons');
+      console.log(this.persons);
+    }, 2000);
+
   }
 
 }
+

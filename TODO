@@ -1,21 +1,27 @@
 
+Shared:
+  ☐ Fix existing markdownfiles
+  ☐ Create Readme
+
 Web:
   ☐ Login - Social Auth `FaceBook` @next @skeleton
   ☐ Login JWT
   ☐ List measure values with Material @next @skeleton
-  ☐ Page with form to fill in new values, Angular Reactive Forms @video(PS, Mosh Hamedani) @skeleton 
+  ☐ Page with form to fill in new values @skeleton 
   ☐ Make some awesome styling using Material @video(PS) @low
   
 API:
   ☐ Login - Social Auth @next @skeleton
   ☐ Login JWT
-  ☐ Swagger eller annat för API, lyssna på podcast om Microservices, vad de alternativa dokumentationsgenererarna hette (inte .net rocks)
+  ☐ ~Swagger~ OpenAPI eller annat för API, lyssna på podcast om Microservices, vad de alternativa dokumentationsgenererarna hette (inte .net rocks)
 
 Database:
   ☐ Azure Sql Tools i VSCode, kolla vad det är för plugins som verkar bäst
   ☐ Create SQL db in Azur
+  ☐ Before adding azure credentials, make sure to handle connectionstrings safely and not check in to source control
 
 Archive:
+  ✔ CORS @critical @done(2018-01-23 11:44)
   ✔ First Endpoint - GET @next @skeleton @done(2018-01-21 14:54)
   ✔ Resource models (to return to client) @done(2018-01-21 14:55)
   ✔ First Migrations @done(2018-01-21 14:55)

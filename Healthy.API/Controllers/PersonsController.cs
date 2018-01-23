@@ -25,6 +25,6 @@ namespace Healthy.API.Controllers
         {
             var persons = await dbContext.Persons.Include(p => p.ScaleResults).ToListAsync();
             return mapper.Map<List<Person>, List<PersonResource>>(persons);
-        }
+        }        
     }
 }
