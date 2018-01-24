@@ -49,10 +49,12 @@ Create a dbContext class like this
 ## Create Connection string
 Add the following to appsettings.json
     "ConnectionStrings": {
-        "Default" :  "server=localhost; database=healthy; user id=sa; password=Healthy2018!"
+        "Default" :  "server=localhost; database=healthy; user id=sa; password=P@ssw0rd!"
     },
 
 ## Migrations
-Add a first migration `dotnet ef migrations add InitialModel`, remember to have SQLServer running in a docker container. If you don't have it up and running yet, fire up a new terminal instance and start it with `docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=P@ssw0rd' -p 1433:1433 -d microsoft/mssql-server-linux`. If you ever need to remove a migration, `dotnet ef migrations remove` removes the last migration (not yet applied to database).
-To push the changes to the database, `dotnet ef database update`. You can also rollback the database to a specific migration, `dotnet ef database update MigrationName` or 0 instead of MigrationName to rollback to inital state.
+Add a first migration `dotnet ef migrations add InitialModel`, remember to have SQLServer running in a docker container. If you don't have it up and running yet, fire up a new terminal instance and start it with `docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=P@ssw0rd' -p 1433:1433 -d microsoft/mssql-server-linux`.     
+If you ever need to remove a migration, `dotnet ef migrations remove` removes the last migration (not yet applied to database).     
+To push the changes to the database, `dotnet ef database update`.   
+You can also rollback the database to a specific migration, `dotnet ef database update MigrationName` or 0 instead of *MigrationName* to rollback to inital state.
 

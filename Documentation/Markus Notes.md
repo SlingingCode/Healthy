@@ -5,7 +5,7 @@ For example:
 `warning: CRLF will be replaced by LF in Healthy.API/obj/project.assets.json.
 The file will have its original line endings in your working directory.`
 
-### Solution to line ending poroblems
+### Solution to line ending problems
 
 Mac: `$ git config --global core.autocrlf input`  
 PC: `$ git config --global core.autocrlf true`
