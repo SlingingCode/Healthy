@@ -1,0 +1,30 @@
+
+Shared:
+
+Web:
+  ☐ Login - Social Auth `FaceBook` @low
+  ☐ Login JWT @next  @skeleton 
+  ☐ List measure values with Material @next @skeleton
+  ☐ Page with form to fill in new values @skeleton 
+  ☐ Make some awesome styling using Material @video(PS) @low
+  
+API:
+  ☐ Login - Social Auth @low 
+  ☐ Login JWT @next @skeleton
+  ☐ ~Swagger~ OpenAPI eller annat för API, lyssna på podcast om Microservices, vad de alternativa dokumentationsgenererarna hette (inte .net rocks)
+
+Database:
+  ☐ Azure Sql Tools i VSCode, kolla vad det är för plugins som verkar bäst
+  ☐ Create SQL db in Azur
+  ☐ Before adding azure credentials, make sure to handle connectionstrings safely and not check in to source control
+
+Archive:
+  ✔ Create Readme @done(2018-01-25 00:48)
+  ✔ Fix existing markdownfiles @done(2018-01-25 00:48)
+  ✔ CORS @critical @done(2018-01-23 11:44)
+  ✔ First Endpoint - GET @next @skeleton @done(2018-01-21 14:54)
+  ✔ Resource models (to return to client) @done(2018-01-21 14:55)
+  ✔ First Migrations @done(2018-01-21 14:55)
+  ✔ Local DB (in docker container) @done(2018-01-21 14:55)
+  ✔ Seed Db @done(2018-01-21 09:38)
+  ✔ Constraints for models: Persons and ScaleResults @done(2018-01-21 09:38)e

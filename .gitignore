@@ -1,7 +1,11 @@
-Help.md
-Git Cheat Sheet.png
-node_modules
+# Manually Added
+# ignore appsettings configuration files
+**/appsettings.development.json
+**/appsettings.staging.json
+**/appsettings.production.json
+**/project.assets.json
 
+#############################################################################
 
 # Created by https://www.gitignore.io/api/angular,aspnetcore,visualstudiocode
 
