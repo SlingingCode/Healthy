@@ -12610,11 +12610,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\SourceCode\\SlingingCode\\GIT\\Healthy\\Healthy.API\\Healthy.API.csproj",
+      "projectUniqueName": "D:\\SourceCode\\SlingingCode\\GIT\\Healthy\\Healthy.API\\Healthy.API.csproj",
       "projectName": "Healthy.API",
-      "projectPath": "d:\\SourceCode\\SlingingCode\\GIT\\Healthy\\Healthy.API\\Healthy.API.csproj",
+      "projectPath": "D:\\SourceCode\\SlingingCode\\GIT\\Healthy\\Healthy.API\\Healthy.API.csproj",
       "packagesPath": "C:\\Users\\Markus\\.nuget\\packages\\",
-      "outputPath": "d:\\SourceCode\\SlingingCode\\GIT\\Healthy\\Healthy.API\\obj\\",
+      "outputPath": "D:\\SourceCode\\SlingingCode\\GIT\\Healthy\\Healthy.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12646,25 +12646,25 @@
         "dependencies": {
           "AutoMapper": {
             "target": "Package",
-            "version": "[6.2.2, )"
+            "version": "[6.2.2]"
           },
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
-            "version": "[1.2.0, )"
+            "version": "[1.2.0]"
           },
+
           "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "[2.0.5, )"
-          },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
-            "target": "Package",
-            "version": "[2.0.1, )"
+            "version": "[2.0.5]"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "[2.0.0, )",
-            "autoReferenced": true
-          }
+            "version": "[2.0.5]"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[2.0.1]"
+          }          
         },
         "imports": [
           "net461"
