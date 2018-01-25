@@ -12,7 +12,3 @@ PC: `$ git config --global core.autocrlf true`
 
 Solution source:  
 https://stackoverflow.com/questions/5834014/lf-will-be-replaced-by-crlf-in-git-what-is-that-and-is-it-important
-  
-    
-## .gitignore content generator
- https://www.gitignore.io/api/angular,aspnetcore,visualstudiocode
