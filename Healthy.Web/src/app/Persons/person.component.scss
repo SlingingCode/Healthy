@@ -1,0 +1,30 @@
+.example-card {
+  max-width: 600px;
+  margin: 20px;
+}
+
+.example-header-image {
+  // http://www.viati.se/wp-content/uploads/2015/03/Markus-Sj%C3%B6lund_340x340.jpg
+  // background-image: url('http://www.viati.se/wp-content/uploads/2015/03/Markus-Sj%C3%B6lund_340x340.jpg');
+  background-size: cover;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.width-20 {
+  width: 20%;
+}
+
+.sc-clear-float {
+  clear: both;
+}

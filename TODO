@@ -1,17 +1,19 @@
-
 Shared:
 
 Web:
-  ☐ Login - Social Auth `FaceBook` @low
+  ☐ Page with form to fill in new values. Use Reactive Forms. @skeleton @started(18-03-03 23:29)
   ☐ Login JWT @next  @skeleton 
-  ☐ List measure values with Material @next @skeleton
-  ☐ Page with form to fill in new values @skeleton 
-  ☐ Make some awesome styling using Material @video(PS) @low
+  ☐ Make it possible to toggle editmode for logged in user, so you can edit your own data.
+  ☐ Login - Social Auth `FaceBook` @low
+  ☐ Add measure for organ-close-fat. @low
+  ☐ Edit row with scale result @low
   
 API:
-  ☐ Login - Social Auth @low 
+  ☐ API endpoints for both "edit person" and "add scale result" @high 
+  ☐ Login - Social Auth @low
   ☐ Login JWT @next @skeleton
   ☐ ~Swagger~ OpenAPI eller annat för API, lyssna på podcast om Microservices, vad de alternativa dokumentationsgenererarna hette (inte .net rocks)
+  ☐ API endpoint for edit scale result @low
 
 Database:
   ☐ Azure Sql Tools i VSCode, kolla vad det är för plugins som verkar bäst
@@ -19,6 +21,8 @@ Database:
   ☐ Before adding azure credentials, make sure to handle connectionstrings safely and not check in to source control
 
 Archive:
+  ✔ List measure values with Material @next @skeleton @done(18-03-03 23:30)
+  ✔ Make some awesome styling using Material @video(PS) @low @done(18-03-03 23:30)
   ✔ Create Readme @done(2018-01-25 00:48)
   ✔ Fix existing markdownfiles @done(2018-01-25 00:48)
   ✔ CORS @critical @done(2018-01-23 11:44)
@@ -27,4 +31,4 @@ Archive:
   ✔ First Migrations @done(2018-01-21 14:55)
   ✔ Local DB (in docker container) @done(2018-01-21 14:55)
   ✔ Seed Db @done(2018-01-21 09:38)
-  ✔ Constraints for models: Persons and ScaleResults @done(2018-01-21 09:38)e
+  ✔ Constraints for models: Persons and ScaleResults @done(2018-01-21 09:38)

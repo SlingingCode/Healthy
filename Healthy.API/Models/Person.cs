@@ -15,7 +15,16 @@ namespace Healthy.API.Models
         [Required]
         [StringLength(255)]        
         public string LastName { get; set; }
+        [Required]        
+        public bool IsPublic { get; set;}
+        
+        [StringLength(255)]
+        public string ImageUrl { get; set; }
+        [StringLength(255)]        
+        public string Motto { get; set; }
+
         public ICollection<ScaleResult> ScaleResults { get; set; }
+
 
         public Person()
         {

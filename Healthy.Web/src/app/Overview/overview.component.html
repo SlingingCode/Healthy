@@ -1,0 +1,54 @@
+<div *ngIf="dataSource.length > 0" class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="points">
+          <mat-header-cell *matHeaderCellDef>Poäng</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.points | number:'.1-1'}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="fullName">
+          <mat-header-cell *matHeaderCellDef>Namn</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.fullName}}</mat-cell>
+        </ng-container>
+
+      <ng-container matColumnDef="firstDate">
+        <mat-header-cell *matHeaderCellDef>Första vägning</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.firstDate | date: 'yy-MM-dd'}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="lastDate">
+        <mat-header-cell *matHeaderCellDef>Senaste vägning</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.lastDate | date: 'yy-MM-dd'}}</mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+
+<!--
+
+<mat-accordion>
+    <mat-expansion-panel
+      multi="true"
+      *ngFor="let p of allPersons; let i = index"
+      [attr.data-index]="i"
+      [expanded]="selectedPerson === i"
+      (opened)="selectPerson(i)"
+      hideToggle="false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ p.firstName + ' ' + p.lastName}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ p.motto }}
+        </mat-panel-description>
+
+      </mat-expansion-panel-header>
+        In med lite DATA här
+      <mat-action-row>
+          <button mat-button color="primary" (click)="goToPerson(person)" [routerLink]="['/person', p.id]">Detaljer</button>
+        </mat-action-row>
+
+    </mat-expansion-panel>
+
+  </mat-accordion> -->

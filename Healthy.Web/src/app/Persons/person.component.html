@@ -1,3 +1,116 @@
-<p>
-  person works!
-</p>
+<div *ngIf="!selectedPerson">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="selectedPerson">
+
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image':'url('+selectedPerson.imageUrl+')'}"></div>
+
+        <div style="width:100%;">
+          <div>
+
+            <mat-card-title *ngIf="!editMode" style="float:left;">{{ selectedPerson.firstName + ' ' + selectedPerson.lastName }}</mat-card-title>
+            <mat-card-title *ngIf="editMode" style="float:left;">
+              <mat-form-field>
+                <input matInput placeholder="Name" value="{{ selectedPerson.firstName + ' ' + selectedPerson.lastName }}">
+              </mat-form-field>
+            </mat-card-title>
+
+            <mat-slide-toggle (change)="handleSliderEditModeChange($event)" *ngIf="selectedPerson.firstName === 'Markus'" [color]="warn"
+              [labelPosition]="'before'" [id]="sliderEdit" [checked]="editMode" style="float:right;">Edit
+            </mat-slide-toggle>
+
+          </div>
+
+          <div style="clear:both;">
+            <mat-card-subtitle *ngIf="!editMode">{{ selectedPerson.motto }}</mat-card-subtitle>
+            <mat-card-subtitle *ngIf="editMode">
+
+              <mat-form-field>
+                <input matInput placeholder="Motto" value="{{ selectedPerson.motto }}">
+              </mat-form-field>
+            </mat-card-subtitle>
+
+          </div>
+
+          <div *ngIf="editMode">
+            <mat-form-field style="width:100%;">
+              <input matInput placeholder="Image Url" value="{{ selectedPerson.imageUrl }}">
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" style="float:right;">Spara</button>
+          </div>
+        </div>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div>
+        <div>
+          <mat-slide-toggle (change)="handleSliderEditModeAddRowChange($event)" *ngIf="selectedPerson.firstName === 'Markus'" [color]="warn"
+            [labelPosition]="'before'" [id]="sliderAddRow" [checked]="editModeAddRow" style="float:right;">Add row
+          </mat-slide-toggle>
+        </div>
+        <div *ngIf="editModeAddRow" class="sc-clear-float">
+          <form class="example-form">
+
+            <mat-form-field class="width-20">
+              <input matInput placeholder="Vikt">
+            </mat-form-field>
+
+            <mat-form-field class="width-20">
+              <input matInput placeholder="Muskler">
+            </mat-form-field>
+
+            <mat-form-field class="width-20">
+              <input matInput placeholder="Fett">
+            </mat-form-field>
+
+            <mat-form-field class="width-20">
+              <input matInput placeholder="BMI">
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" style="float:right;">Add</button>
+
+          </form>
+        </div>
+
+
+        <div *ngIf="dataSource.length > 0" class="mat-elevation-z8 sc-clear-float">
+          <mat-table #table [dataSource]="dataSource">
+
+            <ng-container matColumnDef="weight">
+              <mat-header-cell *matHeaderCellDef>Vikt {{computedWeightChangeSinceBeginning | number:'.1-1'}}%</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.weight}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="date">
+              <mat-header-cell *matHeaderCellDef>Datum</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.date | date: 'yy-MM-dd'}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="percentageMuscles">
+              <mat-header-cell *matHeaderCellDef>Muskler {{computedMuscleChangeSinceBeginning | number:'.1-1'}}%</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.percentageMuscles}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="percentageFat">
+              <mat-header-cell *matHeaderCellDef>Fett {{computedFatChangeSinceBeginning | number:'.1-1'}}%</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.percentageFat}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="bmi">
+              <mat-header-cell *matHeaderCellDef>BMI {{computedBmiChangeSinceBeginning | number:'.1-1'}}%</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.bmi}}</mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+          </mat-table>
+        </div>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+  </div>

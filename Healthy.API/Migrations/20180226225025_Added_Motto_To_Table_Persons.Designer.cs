@@ -11,9 +11,10 @@ using System;
 namespace Healthy.API.Migrations
 {
     [DbContext(typeof(HealthyDbContext))]
-    partial class HealthyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180226225025_Added_Motto_To_Table_Persons")]
+    partial class Added_Motto_To_Table_Persons
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -8,7 +8,7 @@ On Mac, go to your users home folder with command `cd --` and open .bash_profile
 Add line `export ASPNETCORE_ENVIRONMENT=Development`.
 You should have this on your dev machine for hot reloading.
 
-## Add .NET Watch Tool, for Hot reloading from serverside!
+## Add .NET Watch Tool, for Hot reloading on serverside!
 Recompile the application (backend code) and restart the server automatically. Smooth development experience, just like coding frontend!  
 You can find it at https://github.com/aspnet/DotNetTools  
 Install it from terminal with `dotnet install tool dotnet-watch` or add it manully to your .csproj file. 

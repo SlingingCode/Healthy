@@ -11,8 +11,8 @@ using System;
 namespace Healthy.API.Migrations
 {
     [DbContext(typeof(HealthyDbContext))]
-    [Migration("20180121080215_SEED")]
-    partial class SEED
+    [Migration("20180226215232_Added_IsPublic_ImageUrl_To_Table_Person")]
+    partial class Added_IsPublic_ImageUrl_To_Table_Person
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,6 +29,11 @@ namespace Healthy.API.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(255);
+
+                    b.Property<string>("ImageUrl")
+                        .HasMaxLength(255);
+
+                    b.Property<bool>("IsPublic");
 
                     b.Property<string>("LastName")
                         .IsRequired()

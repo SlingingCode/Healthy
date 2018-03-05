@@ -1,0 +1,22 @@
+<mat-sidenav-container class="app-sidenav-container" autosize>
+    <mat-sidenav #sidenav
+                  class="app-sidenav mat-elevation-z10"
+                  [mode]="isScreenSmall() ? 'over' : 'side'"
+                  [opened]="!isScreenSmall()">
+      <mat-toolbar color="primary" [routerLink]="['/']" routerLinkActive="router-link-active" (click)="toolbarTitleText = 'Leaderboard'">
+        Athletes
+      </mat-toolbar>
+
+      <mat-nav-list>
+          <mat-list-item *ngFor="let person of allPersons" routerLinkActive="app-sidenav-link-active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/person', person.id]">
+             <a matLine>{{ person.firstName + ' ' + person.lastName }}</a>
+          </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <div class="app-sidenav-content">
+      <app-toolbar (toggleSideNavigation)="sidenav.toggle()" [titleText]="toolbarTitleText" [matIcon]="sidenav.opened ? 'fullscreen' : 'fullscreen_exit'"></app-toolbar>
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-container>

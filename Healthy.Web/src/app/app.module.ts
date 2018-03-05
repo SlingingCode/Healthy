@@ -8,17 +8,24 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material.module';
 
 import { PersonComponent } from './Persons/person.component';
-import { ScaleResultsComponent } from './ScaleResults/scale-results.component';
-import { PageNotFoundComponent } from './Misc/page-not-found.component';
-import { DataService } from './data.service';
+import { OverviewComponent } from './Overview/overview.component';
+import { PageNotFoundComponent } from './Shared/page-not-found.component';
+import { SideNavigationComponent } from './Shared/side-navigation.component';
+import { ToolbarComponent } from './Shared/toolbar.component';
+
+
+import { DataService } from './Services/data.service';
+import { LogicService } from './Services/logic.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonComponent,
-    ScaleResultsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SideNavigationComponent,
+    ToolbarComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,7 @@ import { DataService } from './data.service';
     MaterialModule,
     HttpClientModule
   ],
-  providers: [DataService],
+  providers: [DataService, LogicService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

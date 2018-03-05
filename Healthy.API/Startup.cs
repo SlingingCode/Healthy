@@ -26,8 +26,23 @@ namespace Healthy.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {            
-            services.AddAutoMapper();
-            services.AddCors();
+            services.AddAutoMapper();            
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowLocalhost",
+                    builder => builder.WithOrigins("http://localhost:4200", "http://localhost:4201"));
+            });
+
+            services.AddCors(o => o.AddPolicy("AllowLocalhost", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();                        
+                        // .AllowCredentials());
+                        // .WithOrigins("http://localhost:4200", "http://localhost:4201")
+                        // .WithHeaders("Access-Control-*", "Origin", "X-Requested-With", "Content-Type", "Accept")//);
+                }));
+                 
             // services.AddDbContext<HealthyDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Default"]));
             services.AddDbContext<HealthyDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
             Console.Write(Configuration.GetConnectionString("Default"));
@@ -41,14 +56,9 @@ namespace Healthy.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
+            }   
 
-            app.UseCors(options => options.WithOrigins("http://localhost:4200", "http://localhost:4201"));
-            // .AllowAnyOrigin()
-            // .AllowAnyMethod()
-            // .AllowAnyHeader()
-            // .AllowCredentials()
-                
+            app.UseCors("AllowLocalhost");
 
             app.UseMvc();
         }

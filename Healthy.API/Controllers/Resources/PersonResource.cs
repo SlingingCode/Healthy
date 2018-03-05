@@ -9,6 +9,9 @@ namespace Healthy.API.Controllers.Resources
         public int Id { get; set; }
         public string FirstName { get; set; }        
         public string LastName { get; set; }
+        public string ImageUrl { get; set; }
+        public bool IsPublic { get; set; }
+        public string Motto { get; set; }
         public ICollection<ScaleResultResource> ScaleResults { get; set; }
 
         public PersonResource()
