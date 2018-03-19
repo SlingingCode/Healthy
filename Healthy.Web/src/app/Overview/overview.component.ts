@@ -18,6 +18,7 @@ export class OverviewComponent implements OnInit {
   percentageWeightChange: number;
   percentageMusclesChange: number;
   percentageFatChange: number;
+  viscalFat: number;
   points: number;
 
   constructor(private dataService: DataService, private logicService: LogicService) { }

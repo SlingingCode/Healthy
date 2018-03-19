@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import {CdkTableModule} from '@angular/cdk/table';
 // tslint:disable-next-line:max-line-length
 import { MatButtonModule, MatCheckboxModule, MatCheckbox, MatButton, MatSidenavModule, MatToolbarModule, MatListModule, MatIconModule, MatProgressSpinnerModule,
-   MatCardModule, MatGridListModule, MatTableModule, MatExpansionModule, MatSlideToggleModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+   MatCardModule, MatGridListModule, MatTableModule, MatExpansionModule, MatSlideToggleModule, MatFormFieldModule, MatInputModule, MatMenuModule,
+   MatSnackBarModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { MatButtonModule, MatCheckboxModule, MatCheckbox, MatButton, MatSidenavM
     MatExpansionModule,
     MatSlideToggleModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule
   ],
   exports: [
     MatButtonModule,
@@ -39,7 +40,7 @@ import { MatButtonModule, MatCheckboxModule, MatCheckbox, MatButton, MatSidenavM
     MatExpansionModule,
     MatSlideToggleModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule, MatMenuModule, MatSnackBarModule, MatDatepickerModule, MatNativeDateModule
   ],
   // declarations: []
 })

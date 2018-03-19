@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,6 +19,7 @@ import { ToolbarComponent } from './Shared/toolbar.component';
 
 import { DataService } from './Services/data.service';
 import { LogicService } from './Services/logic.service';
+import { DecimalPipe } from '@angular/common';
 
 
 @NgModule({
@@ -32,9 +36,11 @@ import { LogicService } from './Services/logic.service';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [DataService, LogicService],
+  providers: [DataService, LogicService, DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

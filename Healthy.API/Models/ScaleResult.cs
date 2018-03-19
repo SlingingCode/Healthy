@@ -12,6 +12,7 @@ namespace Healthy.API.Models
         public float Weight { get; set; }
         public float PercentageMuscles { get; set; }
         public float PercentageFat { get; set; }
+        public float PercentageFatViscal { get; set; }
         public float Bmi { get; set; }
         [Required]
         public Person Person { get; set; }

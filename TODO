@@ -2,6 +2,10 @@ Shared:
 
 Web:
   ☐ Page with form to fill in new values. Use Reactive Forms. @skeleton @started(18-03-03 23:29)
+    ✔ Validation for number values @done(18-03-19 09:36)
+    ✔ Disable button if form not valid @done(18-03-19 09:36)
+    ☐ Validation for date/disable input?
+  ✔ Create Hamburger menu for edit options ("edit" and "add row") @done(18-03-13 00:57)
   ☐ Login JWT @next  @skeleton 
   ☐ Make it possible to toggle editmode for logged in user, so you can edit your own data.
   ☐ Login - Social Auth `FaceBook` @low
@@ -9,7 +13,7 @@ Web:
   ☐ Edit row with scale result @low
   
 API:
-  ☐ API endpoints for both "edit person" and "add scale result" @high 
+  ✔ API endpoints for both "edit person" and "add scale result" @high @started(18-03-10 10:34) @done(18-03-19 16:25) @lasted(9 days 5 hours 51 minutes 44 seconds)
   ☐ Login - Social Auth @low
   ☐ Login JWT @next @skeleton
   ☐ ~Swagger~ OpenAPI eller annat för API, lyssna på podcast om Microservices, vad de alternativa dokumentationsgenererarna hette (inte .net rocks)

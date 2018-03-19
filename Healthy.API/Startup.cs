@@ -27,20 +27,35 @@ namespace Healthy.API
         public void ConfigureServices(IServiceCollection services)
         {            
             services.AddAutoMapper();            
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowLocalhost",
-                    builder => builder.WithOrigins("http://localhost:4200", "http://localhost:4201"));
-            });
+            // services.AddCors(options =>
+            // {
+            //     options.AddPolicy("AllowLocalhost",
+            //         //builder => builder.WithOrigins("http://localhost:4200", "http://localhost:4201"));
+            //         builder => builder.WithOrigins("http://localhost:4200")
+            //             .WithHeaders("Access-Control-Allow-Origin", "Origin", "X-Requested-With", "Content-Type", "Accept")
+            //             .WithOrigins("http://localhost:4200")
+            //             .WithMethods("OPTIONS,PUT,POST,GET"));
+            // });
+
+
+            // services.AddCors(o => o.AddPolicy("AllowLocalhost", builder =>
+            //     {
+            //         builder//.AllowAnyOrigin()                    
+            //             .AllowAnyMethod()
+            //             //.AllowAnyHeader()
+            //             .AllowCredentials()
+            //             .WithOrigins("http://localhost:4200", "http://localhost:4201")
+            //             .WithExposedHeaders("Access-Control-Allow-Origin")
+            //             .WithHeaders("Access-Control-*", "Origin", "X-Requested-With", "Content-Type", "Accept");//);
+            //     }));
 
             services.AddCors(o => o.AddPolicy("AllowLocalhost", builder =>
                 {
-                    builder.AllowAnyOrigin()
+                    
+                    builder.AllowAnyOrigin()                    
                         .AllowAnyMethod()
-                        .AllowAnyHeader();                        
-                        // .AllowCredentials());
-                        // .WithOrigins("http://localhost:4200", "http://localhost:4201")
-                        // .WithHeaders("Access-Control-*", "Origin", "X-Requested-With", "Content-Type", "Accept")//);
+                        .AllowAnyHeader()
+                        .AllowCredentials();                        
                 }));
                  
             // services.AddDbContext<HealthyDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Default"]));

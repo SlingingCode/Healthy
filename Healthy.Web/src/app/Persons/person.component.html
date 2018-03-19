@@ -9,99 +9,138 @@
       <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image':'url('+selectedPerson.imageUrl+')'}"></div>
 
         <div style="width:100%;">
-          <div>
+          <form [formGroup]="personDetailsForm" (ngSubmit)="handleSubmitPersonDetailsForm()">
+            <div>
 
-            <mat-card-title *ngIf="!editMode" style="float:left;">{{ selectedPerson.firstName + ' ' + selectedPerson.lastName }}</mat-card-title>
-            <mat-card-title *ngIf="editMode" style="float:left;">
-              <mat-form-field>
-                <input matInput placeholder="Name" value="{{ selectedPerson.firstName + ' ' + selectedPerson.lastName }}">
+              <mat-card-title *ngIf="!editModePerson" style="float:left;">{{ selectedPerson.firstName + ' ' + selectedPerson.lastName }}</mat-card-title>
+              <mat-card-title *ngIf="editModePerson" style="float:left;">
+                <mat-form-field>
+                  <input matInput placeholder="First name" [ngModel]="selectedPerson.firstName" class="form-control" formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Last name" [ngModel]="selectedPerson.lastName" formControlName="lastName">
+                </mat-form-field>
+                <mat-slide-toggle [color]="warn"
+                  [labelPosition]="'before'"
+                  [id]="sliderIsPublic"
+                  [ngModel]="selectedPerson.isPublic"
+                  formControlName="isPublic"
+                  style="float:right;">Is Public
+                </mat-slide-toggle>
+
+              </mat-card-title>
+
+              <button type="button" mat-icon-button [matMenuTriggerFor]="editMenu" style="float:right;">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #editMenu="matMenu">
+                <button mat-menu-item [(disabled)]="editModePerson" (click)="handleButtonEditModePerson($event)">
+                  <mat-icon>face</mat-icon>
+                  <span>Edit person</span>
+                </button>
+                <button mat-menu-item [(disabled)]="editModeAddResult" (click)="handleButtonEditModeAddResult($event)">
+                  <mat-icon>playlist_add</mat-icon>
+                  <span>Add results</span>
+                </button>
+                <button mat-menu-item [(disabled)]="!editModeAddResult && !editModePerson" (click)="handleButtonEditModeExit($event)">
+                  <mat-icon>backspace</mat-icon>
+                  <span>Exit edit mode</span>
+                </button>
+              </mat-menu>
+
+            </div>
+
+            <div style="clear:both;">
+              <mat-card-subtitle *ngIf="!editModePerson">{{ selectedPerson.motto }}</mat-card-subtitle>
+              <mat-card-subtitle *ngIf="editModePerson">
+
+                <mat-form-field style="width:100%;">
+                  <input matInput placeholder="Motto" [ngModel]="selectedPerson.motto" class="form-control" formControlName="motto">
+                </mat-form-field>
+              </mat-card-subtitle>
+
+            </div>
+
+            <div *ngIf="editModePerson">
+              <mat-form-field style="width:100%;">
+                <input matInput placeholder="Image Url" [ngModel]="selectedPerson.imageUrl"  class="form-control" formControlName="imageUrl">
               </mat-form-field>
-            </mat-card-title>
-
-            <mat-slide-toggle (change)="handleSliderEditModeChange($event)" *ngIf="selectedPerson.firstName === 'Markus'" [color]="warn"
-              [labelPosition]="'before'" [id]="sliderEdit" [checked]="editMode" style="float:right;">Edit
-            </mat-slide-toggle>
-
-          </div>
-
-          <div style="clear:both;">
-            <mat-card-subtitle *ngIf="!editMode">{{ selectedPerson.motto }}</mat-card-subtitle>
-            <mat-card-subtitle *ngIf="editMode">
-
-              <mat-form-field>
-                <input matInput placeholder="Motto" value="{{ selectedPerson.motto }}">
-              </mat-form-field>
-            </mat-card-subtitle>
-
-          </div>
-
-          <div *ngIf="editMode">
-            <mat-form-field style="width:100%;">
-              <input matInput placeholder="Image Url" value="{{ selectedPerson.imageUrl }}">
-            </mat-form-field>
-            <button mat-raised-button color="primary" type="submit" style="float:right;">Spara</button>
-          </div>
+              <div style="float:right;padding-bottom:20px;">
+                <button mat-button color="secondary" type="button" (click)="handleButtonExitEditMode($event)" style="margin-right:20px;">Avbryt</button>
+                <button mat-button color="primary" type="submit" [disabled]="personDetailsForm.pristine || !personDetailsForm.valid">Spara</button>
+              </div>
+            </div>
+          </form>
         </div>
     </mat-card-header>
 
     <mat-card-content>
       <div>
-        <div>
-          <mat-slide-toggle (change)="handleSliderEditModeAddRowChange($event)" *ngIf="selectedPerson.firstName === 'Markus'" [color]="warn"
-            [labelPosition]="'before'" [id]="sliderAddRow" [checked]="editModeAddRow" style="float:right;">Add row
-          </mat-slide-toggle>
-        </div>
-        <div *ngIf="editModeAddRow" class="sc-clear-float">
-          <form class="example-form">
+        <div *ngIf="editModeAddResult" class="sc-clear-float">
+          <form [formGroup]="addScaleResultForm" (ngSubmit)="handleSubmitScaleResultForm()">
 
             <mat-form-field class="width-20">
-              <input matInput placeholder="Vikt">
+              <input matInput placeholder="Weight" class="form-control" formControlName="weight" type="number">
             </mat-form-field>
 
             <mat-form-field class="width-20">
-              <input matInput placeholder="Muskler">
+              <input matInput placeholder="Muscles" class="form-control" formControlName="muscles" type="number">
             </mat-form-field>
 
             <mat-form-field class="width-20">
-              <input matInput placeholder="Fett">
+              <input matInput placeholder="Fat" class="form-control" formControlName="fat" type="number">
             </mat-form-field>
 
             <mat-form-field class="width-20">
-              <input matInput placeholder="BMI">
+              <input matInput placeholder="Viscal Fat" class="form-control" formControlName="viscalFat" type="number">
             </mat-form-field>
 
-            <button mat-raised-button color="primary" type="submit" style="float:right;">Add</button>
+            <mat-form-field class="width-20">
+              <input matInput placeholder="BMI" class="form-control" formControlName="bmi" type="number">
+            </mat-form-field>
 
+            <mat-form-field>
+              <input matInput [matDatepicker]="dp" placeholder="Date" formControlName="resultsDate" type="text" disabled>
+              <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+              <mat-datepicker #dp disabled="false"></mat-datepicker>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" style="float:right;" [disabled]="addScaleResultForm.invalid" (ngSubmit)="onSubmitScaleResultForm()">Add</button>
           </form>
         </div>
 
 
-        <div *ngIf="dataSource.length > 0" class="mat-elevation-z8 sc-clear-float">
+        <div *ngIf="dataSource.length > 0 && selectedPerson.isPublic" class="mat-elevation-z8 sc-clear-float">
           <mat-table #table [dataSource]="dataSource">
 
             <ng-container matColumnDef="weight">
-              <mat-header-cell *matHeaderCellDef>Vikt {{computedWeightChangeSinceBeginning | number:'.1-1'}}%</mat-header-cell>
-              <mat-cell *matCellDef="let element">{{element.weight}}</mat-cell>
+              <mat-header-cell *matHeaderCellDef>Weight {{computedWeightChangeSinceBeginning | number:'.1-1'}}%</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.weight | number:'.0-1'}}</mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="date">
-              <mat-header-cell *matHeaderCellDef>Datum</mat-header-cell>
+              <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
               <mat-cell *matCellDef="let element">{{element.date | date: 'yy-MM-dd'}}</mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="percentageMuscles">
-              <mat-header-cell *matHeaderCellDef>Muskler {{computedMuscleChangeSinceBeginning | number:'.1-1'}}%</mat-header-cell>
-              <mat-cell *matCellDef="let element">{{element.percentageMuscles}}</mat-cell>
+              <mat-header-cell *matHeaderCellDef>Muscles {{computedMuscleChangeSinceBeginning | number:'.1-1'}}%</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.percentageMuscles | number:'.0-1'}}</mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="percentageFat">
-              <mat-header-cell *matHeaderCellDef>Fett {{computedFatChangeSinceBeginning | number:'.1-1'}}%</mat-header-cell>
-              <mat-cell *matCellDef="let element">{{element.percentageFat}}</mat-cell>
+              <mat-header-cell *matHeaderCellDef>Fat {{computedFatChangeSinceBeginning | number:'.1-1'}}%</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.percentageFat | number:'.0-1'}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="percentageFatViscal">
+              <mat-header-cell *matHeaderCellDef>Viscal Fat {{computedViscalFatChangeSinceBeginning | number:'.1-1'}}%</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.percentageFatViscal | number:'.0'}}</mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="bmi">
               <mat-header-cell *matHeaderCellDef>BMI {{computedBmiChangeSinceBeginning | number:'.1-1'}}%</mat-header-cell>
-              <mat-cell *matCellDef="let element">{{element.bmi}}</mat-cell>
+              <mat-cell *matCellDef="let element">{{element.bmi | number:'.0-1'}}</mat-cell>
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

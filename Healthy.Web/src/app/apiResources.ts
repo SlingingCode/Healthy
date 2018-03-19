@@ -14,5 +14,6 @@ interface PersonResponse {
     weight: number;
     percentageMuscles: number;
     percentageFat: number;
+    percentageFatViscal: number;
     bmi: number;
 }

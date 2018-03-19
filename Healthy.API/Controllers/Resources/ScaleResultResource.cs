@@ -9,6 +9,7 @@ namespace Healthy.API.Controllers.Resources
         public float Weight { get; set; }
         public float PercentageMuscles { get; set; }
         public float PercentageFat { get; set; }
+        public float PercentageFatViscal { get; set; }        
         public float Bmi { get; set; }        
     }
 }

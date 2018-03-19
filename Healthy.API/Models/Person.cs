@@ -21,7 +21,7 @@ namespace Healthy.API.Models
         [StringLength(255)]
         public string ImageUrl { get; set; }
         [StringLength(255)]        
-        public string Motto { get; set; }
+        public string Motto { get; set; }        
 
         public ICollection<ScaleResult> ScaleResults { get; set; }
 

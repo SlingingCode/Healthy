@@ -1,2 +1,2 @@
--- select top 10 * from persons
-select top 10 * from scaleresults
+--select top 10 * from scaleresults
+SELECT top 100 * from persons

@@ -9,7 +9,7 @@ namespace Healthy.API.Mapping
         public MappingProfile()
         {
             CreateMap<Person, PersonResource>();
-            CreateMap<ScaleResult, ScaleResultResource>();
+            CreateMap<ScaleResult, ScaleResultResource>(); //.ReverseMap();
             
         }        
     }
